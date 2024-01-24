@@ -1,0 +1,8 @@
+:root {
+  --shadow: 6px 6px rgb(240, 237, 237);
+  --light: #f8f8f8;
+  --ligt-gray: #707070;
+  --ligt-blu: #1792d2;
+  --dark-blu: #143774;
+  --border: 1px solid black;
+}

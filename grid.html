@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="grid.css" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- <div class="sidebar"> -->
+    <div class="side">
+      <div class="btn">
+        <div class="top">
+          <i class="fa fa-codepen"
+            ><span><code>commerce</code></span></i
+          >
+          >
+        </div>
+        <span><i class="fa fa-bars"></i></span>
+      </div>
+      <div class="menu">
+        <img src="download.jpg" alt="#" />
+        <div class="hou">
+          <h4>black.</h4>
+          <p>admin</p>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <a href=""><i class="fa fa-qrcode"></i>dashborad</a>
+        </li>
+        <li>
+          <a href=""><i class="fa fa-shopping-bag"></i>products</a>
+        </li>
+        <li>
+          <a href=""><i class="fa fa-check-square-o"></i>categories</a>
+        </li>
+        <li>
+          <a href=""><i class="fa fa-address-card-o"></i>order</a>
+        </li>
+        <li>
+          <a href=""><i class="fa fa-child"></i>customers</a>
+        </li>
+        <li>
+          <a href=""><i class="fa fa-map-marker"></i>shipping</a>
+        </li>
+        <li>
+          <a href=""><i class="fa fa-cogs"></i>setting</a>
+        </li>
+        <li>
+          <a href=""><i class="fa fa-sign-out"></i>logout</a>
+        </li>
+      </ul>
+
+      <div class="main-content">
+        <div class="container">
+          <h1>code practice</h1>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    let btn = document.querySelector(".btn");
+    let side = document.querySelector(".side");
+
+    btn.onclick = function () {
+      side.classList.toggle("active");
+    };
+  </script>
+</html>

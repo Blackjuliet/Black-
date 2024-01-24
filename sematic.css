@@ -1,0 +1,236 @@
+:root {
+  --shadow: 3px 5px 5px green;
+  --lightg: #fff;
+  --dark: #333;
+}
+html {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--dark);
+}
+body {
+  background-color: #ccc;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+}
+.universtiy-web {
+  padding: 10px;
+}
+.UNI {
+  background: url(beach.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 0.3rem;
+}
+header nav {
+  display: flex;
+  justify-content: space-around;
+}
+.log {
+  display: flex;
+}
+.log i {
+  color: red;
+}
+.log h1 {
+  color: var(--lightg);
+  text-transform: uppercase;
+}
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  min-width: 50%;
+}
+ul a {
+  color: var(--lightg);
+  text-decoration: none;
+  font-weight: bold;
+  /* padding: 13px; */
+}
+ul a:hover {
+  background-color: red;
+  border-bottom: 1px solid black;
+  color: var(--dark);
+}
+.UNIVE {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3.5rem;
+}
+.UNIVE h1 {
+  color: var(--lightg);
+  padding-top: 1rem;
+  font-size: 2rem;
+  padding: 0px;
+  margin: 0px;
+}
+.UNIVE p {
+  color: var(--lightg);
+  padding-bottom: 2rem;
+  padding: 0px;
+  margin: 0px;
+}
+
+.UNIVE > a {
+  color: var(--lightg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 1rem;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid white;
+  font-size: 0.9rem;
+}
+.UNIVE > a:hover {
+  background-color: red;
+  color: var(--dark);
+}
+.UNI-ABOUT {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.UNIV {
+  background-color: wheat;
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+.UNIV:hover {
+  box-shadow: var(--shadow);
+  background-color: red;
+  color: var(--lightg);
+}
+.UNIV p {
+  font-size: 10px;
+}
+.one {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.8rem;
+  padding-bottom: 1.8rem;
+}
+.one h2 {
+  margin: 0;
+}
+.one p {
+  margin: 0;
+}
+.UNI-CAMP {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.UNI-CAMP > img {
+  width: 100%;
+  height: 30vh;
+}
+.UNI-CAMP > img:hover {
+  background-color: red;
+  box-shadow: var(--shadow);
+}
+.UNI-FACLIIT {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.facilit img {
+  border-radius: 10px;
+}
+.facilit img:hover {
+  box-shadow: var(--shadow);
+}
+.UNIT-STUDE {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.student-t {
+  background-color: wheat;
+  display: flex;
+  gap: 10px;
+}
+.student-t p {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.student-t img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+.two i {
+  color: red;
+}
+.student-t:hover {
+  box-shadow: var(--shadow);
+  color: white;
+}
+.UNI-ENROLL {
+  background: url(choco-cake.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  text-align: center;
+  padding: 3.5rem;
+}
+.UNI-ENROLL a {
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 2px 10px;
+}
+.UNI-ENROLL a:hover {
+  color: var(--dark);
+  background-color: wheat;
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 2rem;
+}
+footer i {
+  color: red;
+  display: grid;
+  padding: 0.4rem 1rem;
+}
+footer a {
+  text-decoration: none;
+  color: var(--dark);
+}
+footer p {
+  font-size: 0.8rem;
+}
+footer a:hover {
+  background-color: red;
+  box-shadow: var(--shadow);
+  color: var(--lightg);
+}
+@media (max-width: 600px) {
+  .UNI {
+    display: flex;
+    flex-direction: column;
+  }
+  header nav {
+    display: flex;
+    flex-direction: column;
+  }
+}

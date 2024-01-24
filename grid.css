@@ -1,0 +1,88 @@
+:root {
+  --shadow: 5px 1px red;
+  --light: #f8f8f8;
+  --ligt-gray: #707070;
+  --ligt-blu: #1792d2;
+  --dark-blu: #143774;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: wheat;
+  font-family: system-ui;
+}
+img {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+.hou {
+  padding-left: 1rem;
+}
+
+.side {
+  padding-left: 1rem;
+  width: 100px;
+  height: 100vh;
+  background-color: darkslategrey;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* transition: all 0.5s ease; */
+}
+
+.side.active ~ .main-content {
+  left: 300px;
+  width: calc(100%-300px);
+  font-size: 6rem;
+}
+
+.btn {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.2rem;
+  color: white;
+  opacity: 0;
+}
+.btn span {
+  padding-left: 0.8rem;
+  opacity: 4;
+}
+
+.menu {
+  color: white;
+  display: flex;
+  text-transform: capitalize;
+}
+
+ul {
+  padding-top: 1.5rem;
+  list-style: none;
+}
+ul li {
+  padding-bottom: 2.3rem;
+  color: white;
+}
+ul a {
+  color: white;
+  text-decoration: none;
+}
+
+ul i {
+  padding-right: 1rem;
+}
+
+/* stying the sctive */
+
+.side.active {
+  width: 400px;
+}
+
+.btn.top {
+  opacity: 1;
+}

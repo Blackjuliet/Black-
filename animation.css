@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --shadow: 6px 6px rgb(240, 237, 237);
+  --light: #f8f8f8;
+  --ligt-gray: #707070;
+  --ligt-blu: #1792d2;
+  --dark-blu: #143774;
+}
+
+body {
+  font-family: "Open Sans";
+}
+
+.main {
+  background-color: white;
+  width: 98%;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 1.6rem;
+}
+
+.header {
+  text-align: center;
+  padding-bottom: 1.5rem;
+}
+
+.header .logg {
+  font-size: 2rem;
+}
+.header h1 {
+  padding-bottom: 1rem;
+}
+
+/* styling the container */
+
+.container {
+  display: flex;
+  gap: 1rem;
+  padding: 2rem;
+  max-width: 770px;
+}
+
+.list {
+  display: grid;
+  gap: 2rem;
+  align-content: center;
+  padding-left: 1rem;
+}
+
+.card {
+  display: grid;
+  gap: 2rem;
+  align-content: center;
+  margin: 4.5rem 0rem;
+  padding-left: 1rem;
+}
+.LIST {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.container i {
+  display: flex;
+  justify-content: flex-end;
+
+  width: 100%;
+  font-size: 1.7rem;
+}
+.list i {
+  color: yellow;
+  margin-bottom: 1rem;
+}
+
+/* styling inside the cards */
+
+.card:first-child {
+  border-top: 3px solid lightseagreen;
+  box-shadow: var(--shadow);
+}
+.card:last-child {
+  border-top: 3px solid rgb(1, 110, 110);
+  box-shadow: var(--shadow);
+}
+.list:first-child {
+  border-top: 3px solid darkred;
+  box-shadow: var(--shadow);
+}
+.list:last-child {
+  border-top: 3px solid darkgoldenrod;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 500px) {
+  .container {
+    flex-direction: column;
+  }
+  .card i {
+    padding-bottom: 2rem;
+    padding-right: 6rem;
+  }
+}
+
+@media (max-width: 950px) {
+  .main {
+    background-color: white;
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    font-size: 1.7rem;
+  }
+
+  .container {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2.5rem;
+    max-width: 770px;
+  }
+}

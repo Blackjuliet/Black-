@@ -1,0 +1,117 @@
+:root {
+  --primary: #ddd;
+  --dark: #333;
+  --lightg: #fff;
+  --shadow: 0 1px 5px rgba(104 104 104 0.8);
+}
+/* html {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--dark);
+} */
+body {
+  margin: 0;
+  font-size: 1.125rem;
+  background-color: pink;
+}
+/* .responsiveness {
+  background-color: rgb(240, 104, 149);
+  max-width: 80%;
+  margin-left: 7rem;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  width: 100%;
+}
+span {
+  color: purple;
+  text-align: center;
+}
+img {
+  display: flex;
+  width: 100%;
+  max-height: 15rem;
+}
+.TWO {
+  background-color: rgb(216, 69, 118);
+  display: flex;
+  gap: 10px;
+  margin: 10px;
+}
+.TWO > div {
+  border: 5px solid lightgreen;
+}
+.THREE {
+  background-color: rgb(216, 69, 118);
+  display: flex;
+} */
+.responsiveness {
+  background-color: wheat;
+  margin: 0 auto;
+  width: 95%;
+  max-width: 980px;
+}
+.TWO {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 2rem auto;
+}
+img {
+  max-width: 100%;
+}
+h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+h3 {
+  font-size: 1.5rem;
+}
+span {
+  color: purple;
+}
+p {
+  margin: 0;
+}
+.culum-one {
+  width: 20%;
+}
+.culum {
+  width: 70%;
+}
+.culum-two {
+  width: 45%;
+}
+.col {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+}
+@media (max-width: 600px) {
+  body {
+    background-color: purple;
+  }
+  .TWO {
+    display: flex;
+    flex-direction: column;
+  }
+  .culum-one {
+    width: 100%;
+  }
+  .culum {
+    width: 100%;
+  }
+  .culum-two {
+    width: 100%;
+  }
+}
+/* @media (min-width: 1000px) {
+  body {
+    background-color: green;
+  }
+} */
