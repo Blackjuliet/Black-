@@ -7,28 +7,180 @@ body {
   margin: 0;
 }
 
-.header-container {
-  display: flex;
-  justify-content: center;
+:root {
+  --shadow: 2px 5px black;
+  --padding: 1.4px.3rem;
+  --transition: all 1s ease-in-out;
+  --border-radius: 2rem;
+}
+
+/* styling the burger menu */
+
+.hamburger-list {
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  z-index: 1;
+  padding: 2rem;
 }
-.header-container > nav {
-  width: 90%;
+
+.hambur {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+  /* transition: all 0.4s ease; */
 }
-.header-container > nav > ul {
-  background-color: blue;
+
+.burgerlist {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(blue, lightblue);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+}
+
+.burgerlist div {
+  width: 100%;
+  height: 5px;
+  background-color: greenyellow;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
+  border-radius: 50%;
+}
+.burgerlist div::before,
+.burgerlist div::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  height: 5px;
+  background-color: greenyellow;
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.burgerlist div::after {
+  top: 10px;
+}
+
+/* :checked it to rotate */
+
+.hambur:checked + .burgerlist div {
+  transform: rotate(135deg);
+}
+
+/* let make it x when it rotate */
+
+.hambur:checked + .burgerlist div::before,
+.hambur:checked + .burgerlist div::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* styling the main ~~~~~~~burger */
+
+.hambur:checked ~ .main-burger {
+  visibility: visible;
+}
+
+.hambur:checked ~ .main-burger div {
+  transform: scale(1);
+  transition: 0.5s ease-in-out;
+}
+.hambur:checked ~ .main-burger div div {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.main-burger {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-burger div {
+  width: 200vw;
+  height: 200vw;
+  background-color: rgb(247, 235, 235);
+  display: flex;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  transform: scale(0);
+  transition: 0.4s ease-in-out;
+  opacity: 0.8;
+}
+
+.main-burger div div {
+  max-width: 90vw;
+  max-height: 100vh;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.hamburger-list ul li {
   list-style: none;
+  padding: 2rem;
+  font-size: 1.5rem;
 }
-.header-container > nav > ul > li > a {
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
+.hamburger-list ul a {
   text-decoration: none;
+  color: blue;
+  text-transform: uppercase;
+  font-weight: bold;
 }
+.hamburger-list ul a:hover {
+  color: black;
+  transition: all 0.8s ease-in-out;
+  border-radius: 2rem;
+  padding: 1rem 4rem;
+  border-bottom: 2px dotted black;
+}
+
+button {
+  padding: 5px 7px;
+  background-color: rgb(240, 15, 52);
+  border-radius: 2rem;
+  border: none;
+}
+
+button a {
+  color: white;
+  text-decoration: none;
+  font-size: 10px;
+}
+button a:hover {
+  padding: 1.4px.3rem;
+  box-shadow: var(--shadow);
+  border-radius: 2rem;
+  transition: all 1s ease-in-out;
+}
+
 .item {
   padding: 10px;
   display: grid;
@@ -49,7 +201,6 @@ body {
 img {
   width: 100%;
   padding: 8px;
-  background-color: blue;
 }
 .item-two {
   background-color: red;
@@ -62,3 +213,230 @@ img {
     grid-template-columns: repeat(auto-fit minnax(300, 1fr));
   }
 } */
+
+.main-container {
+  width: 98%;
+  max-width: 950px;
+  margin: 0 auto;
+  background-color: wheat;
+}
+
+img {
+  width: 100%;
+}
+
+.world {
+  background: url(monutain.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: 1rem;
+  font-size: 1.7rem;
+  padding-bottom: 5rem;
+}
+
+.logo {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 3;
+  left: 1;
+}
+
+.logo nav {
+  width: 40%;
+}
+
+.logo ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.words {
+  text-align: center;
+  margin-top: 7rem;
+}
+
+.logo h4 {
+  color: white;
+}
+
+.logo a {
+  color: white;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+ul .one {
+  background-color: rgb(245, 10, 49);
+  border-radius: 2rem;
+  padding: 1.4px.3rem;
+}
+ul .chil {
+  color: rgb(248, 13, 53);
+}
+.logo a:hover {
+  box-shadow: var(--shadow);
+  transition: all 0.4s ease;
+  padding: 1.4px.3rem;
+  border-radius: 2rem;
+  color: blue;
+}
+
+.world h1 {
+  color: rgb(250, 232, 232);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+  line-height: 5rem;
+}
+.world p {
+  color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+}
+span {
+  border-bottom: 3px solid red;
+}
+
+/* styling the seconud part of the container */
+
+.world-two {
+  padding: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+  position: relative;
+}
+.TOWE img {
+  width: 90%;
+  height: 30vh;
+  object-fit: cover;
+  margin-left: auto;
+}
+.TOWE img:hover {
+  padding: var(--padding);
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+}
+
+.TOWE {
+  display: flex;
+}
+.TOWE p {
+  display: flex;
+  margin: 1rem 0;
+  margin-left: 1rem;
+}
+.TOWE button {
+}
+
+/* this image has a position on it and it be style separately */
+.imag {
+  position: absolute;
+  top: 9rem;
+  right: 19rem;
+}
+.imag img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.imag img:hover {
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  padding: var(--padding);
+  transform: rotate(135deg);
+  transition: 2s ease-in-out;
+}
+
+/* styling the third conyainer */
+
+.world-three {
+  background: url(mountain\ clamb.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 40vh;
+  object-fit: cover;
+  padding: 1rem;
+  color: rgb(240, 230, 230);
+  margin-top: 1rem;
+}
+
+.blaa {
+  padding-top: 4rem;
+  padding-left: 3rem;
+}
+
+/* styling the forth container */
+
+.world-four {
+  display: flex;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.picture {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-left: 1rem;
+}
+
+.world-four .card-two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.world-four .card-two h1 {
+  padding-bottom: 1rem;
+}
+.world-four .card-two p {
+  padding-bottom: 1rem;
+}
+
+/* styling the footer */
+
+footer {
+  background-color: rgb(73, 54, 73);
+  padding: 2rem 1rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  gap: 0.8rem;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .logo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 1;
+  }
+
+  .TOWE {
+    flex-direction: column;
+  }
+  .imag {
+    position: absolute;
+    top: 5rem;
+    right: 9rem;
+  }
+  .imag img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  .logo ul {
+    flex-direction: column;
+  }
+}

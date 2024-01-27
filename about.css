@@ -5,33 +5,7 @@ body {
   /* text-align: center; */
 }
 
-/* .container {
-  background-color: blue;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 10vh;
-  padding: 10px;
-  color: white;
-  position: sticky;
-  top: 0;
-}
-.header-container > nav > ul {
-  list-style-type: none;
-  display: flex;
-  justify-content: space-around;
-}
-nav {
-  width: 70%;
-}
-.header-container > nav > ul > li > a {
-  color: white;
-  text-decoration: none;
-  font-weight: bolder;
-} */
-
-*,
+*/ *,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -39,16 +13,8 @@ nav {
 body {
   margin: 0;
 }
-:root {
-  --bar-width: 60px;
-  --bar-height: 8px;
-  --hamburger-gap: 6px;
-  --animation-timing: 200ms ease-in-out;
-  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
-}
 
 .menu-wrap {
-  background-color: red;
   position: fixed;
   top: 0;
   left: 0;
@@ -125,22 +91,65 @@ body {
 
 /* stying the main contINER */
 
+.toggler:checked ~ .menu {
+  visibility: visible;
+}
+
+.toggler:checked ~ .menu div {
+  transform: scale(1);
+  transition: all 0.4s ease;
+}
+.toggler:checked ~ .menu div div {
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
 .menu {
-  background-color: gray;
+  background-color: lightblue;
   width: 100%;
   height: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  /* visibility: hidden; */
-  overflow: hidden;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  overflow: hidden;
 }
+
 .menu div {
-  background: linear-gradient(top to right yellow, lightgray);
-  width: 200vh;
-  height: 200vh;
+  background: url(library.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 200vw;
+  height: 200vw;
   border-radius: 50%;
+  transform: scale(0);
+  transition: all 0.4s ease;
+  display: flex;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.3;
+}
+
+.menu div div {
+  text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+ul li {
+  list-style: none;
+  padding-bottom: 2rem;
+  text-transform: capitalize;
+}
+ul a {
+  text-decoration: none;
+  color: white;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
