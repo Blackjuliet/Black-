@@ -1,9 +1,10 @@
 :root {
-  --shadow: 5px 1px red;
+  --shadow: 7px 7px black;
   --light: #f8f8f8;
   --ligt-gray: #707070;
   --ligt-blu: #1792d2;
   --dark-blu: #143774;
+  --linear-gradien: (white, green);
 }
 
 * {
@@ -12,77 +13,366 @@
 }
 
 body {
-  background-color: wheat;
-  font-family: system-ui;
-}
-img {
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-}
-.hou {
-  padding-left: 1rem;
+  background-color: whitesmoke;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+  font-style: oblique;
 }
 
-.side {
-  padding-left: 1rem;
-  width: 100px;
-  height: 100vh;
-  background-color: darkslategrey;
+.burger-burn-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.burn {
+  width: 27px;
+  height: 27px;
   position: absolute;
   top: 0;
   left: 0;
-  /* transition: all 0.5s ease; */
-}
-
-.side.active ~ .main-content {
-  left: 300px;
-  width: calc(100%-300px);
-  font-size: 6rem;
-}
-
-.btn {
-  padding: 1rem 0;
-  display: flex;
-  justify-content: space-around;
-  font-size: 1.2rem;
-  color: white;
+  z-index: 2;
+  cursor: pointer;
+  cursor: pointer;
   opacity: 0;
 }
-.btn span {
-  padding-left: 0.8rem;
-  opacity: 4;
-}
 
-.menu {
-  color: white;
+.burn- {
+  width: 30px;
+  height: 30px;
+  background: url(flower-img.jpeg);
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 0.3rem;
   display: flex;
-  text-transform: capitalize;
+  justify-content: center;
+  align-items: center;
+}
+.burn- div {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  transition: all 0.4s ease;
 }
 
-ul {
-  padding-top: 1.5rem;
+.burn- div::before,
+.burn- div::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, white, green, yellow);
+}
+.burn- div::after {
+  top: 10px;
+}
+
+/*  styling the animination to make it rotate */
+.burn:checked + .burn- div {
+  transform: rotate(135deg);
+}
+
+/* lets make it x when it rotate  */
+.burn:checked + .burn- div::before,
+.burn:checked + .burn- div::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* let use the properties of th animination for hover */
+
+.burn:checked ~ .burn-menu {
+  visibility: visible;
+}
+.burn:checked ~ .burn-menu div {
+  transform: scale(1);
+  transition: 0.4 ease;
+}
+
+.burn:checked ~ .burn-menu div div {
+  opacity: 1;
+  transition: opacity 0.4 ease-in-out;
+}
+
+/* styling the main menu */
+
+.burn-menu {
+  width: 25%;
+  height: 100%;
+  position: fixed;
+  visibility: hidden;
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.burn-menu div {
+  background: url(flower-img.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 200vw;
+  height: 200vw;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0);
+  transition: 1.5s ease;
+  border-radius: 100%;
+}
+
+.burn-menu div div {
+  max-width: 80%;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  border-radius: 100%;
+}
+
+/* style the ul */
+.burger-burn-container ul li {
   list-style: none;
+  padding: 1.4rem;
 }
-ul li {
-  padding-bottom: 2.3rem;
+
+.burger-burn-container a {
   color: white;
+  text-decoration: none;
+  text-transform: uppercase;
 }
-ul a {
+
+.burger-burn-container a:hover {
+  transition: all 1s ease-in-out;
+  color: greenyellow;
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  border-radius: 50%;
+}
+
+.tsummary-container {
+  background-color: white;
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+
+  /* gap: 2rem; */
+}
+
+.time-container {
+  background: linear-gradient(rgb(160, 32, 160), darkblue);
+  text-align: center;
   color: white;
+  border-radius: 2rem;
+  width: 50%;
+}
+
+.time-container .number {
+  background-color: rgb(20, 20, 156);
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 2 3rem;
+  position: relative;
+  animation-name: glow;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+}
+
+/* applying the animation */
+
+@keyframes glow {
+  0% {
+    box-shadow: 0px 2px 10px white;
+    transform: rotate(180deg);
+  }
+  50% {
+    box-shadow: 5px 2px 10px white;
+  }
+  100% {
+    box-shadow: 5px 10px 20px white;
+  }
+}
+
+/* applying the animation clossing of the animation */
+
+.time-container .number h1 {
+  font-size: 4rem;
+  position: relative;
+  animation-name: slid-in;
+  animation-duration: 4s;
+  animation-duration: 5s;
+}
+
+@keyframes slid-in {
+  0% {
+    top: -20px;
+  }
+  100% {
+    top: 30px;
+  }
+}
+/* applying the animation clossing of the animation */
+
+.time-container .number p {
+  font-size: small;
+  color: lightgray;
+}
+
+.time-container h3 {
+  padding-top: 1.5rem;
+}
+
+.time-container h2 {
+  padding-bottom: 1.5rem;
+}
+.time-container p {
+  padding: 1.5rem 2rem;
+}
+
+/* let stying the secound section */
+
+.sectio-container {
+  background-color: white;
+  padding: 2rem;
+  width: 50%;
+  border-bottom-right-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+/* applying the animation clossing of the animation */
+.sectio-container h1 {
+  padding-bottom: 1rem;
+  position: relative;
+  animation-name: text-typograp;
+  animation-duration: 4s;
+}
+
+@keyframes text-typograp {
+  0% {
+  }
+  50% {
+  }
+  100% {
+  }
+}
+/* applying the animation clossing of the animation */
+.card-one {
+  background-color: hsla(0, 100%, 90%, 0.1);
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0.8rem;
+  border-radius: 1rem;
+  color: hsla(0, 100%, 50%, 0.6);
+}
+.card-two {
+  background-color: rgba(250, 250, 43, 0.1);
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0.8rem;
+  border-radius: 1rem;
+  color: hsla(54, 100%, 50%, 0.6);
+  margin-top: 1rem;
+}
+.card-three {
+  background-color: rgba(216, 252, 216, 0.1);
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0.8rem;
+  border-radius: 1rem;
+  color: rgba(11, 199, 199, 0.9);
+  margin-top: 1rem;
+}
+.card-four {
+  background-color: rgb(252, 250, 253);
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0.8rem;
+  border-radius: 1rem;
+  color: rgb(134, 23, 238);
+  margin: 1rem;
+}
+
+/* stying the properties on the secound section */
+
+span {
+  color: rgb(58, 53, 53);
+}
+
+.sectio-container i {
+  font-weight: bold;
+  padding-right: 0.4rem;
+}
+/* applying the animation clossing of the animation */
+button {
+  background-color: rgba(58, 53, 53, 7);
+  width: 100%;
+  padding: 1rem;
+  border-radius: 2rem;
+  border: none;
+  transition-property: transform;
+  transition-duration: 3s;
+}
+
+button:hover {
+  transform: rotateY(180deg);
+}
+/* applying the animation clossing of the animation */
+button a {
+  color: white;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
   text-decoration: none;
 }
 
-ul i {
-  padding-right: 1rem;
-}
+@media (max-width: 550px) {
+  .tsummary-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-/* stying the sctive */
+  .time-container {
+    width: 100%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
 
-.side.active {
-  width: 400px;
-}
+  .time-container h3 {
+    padding-top: 1rem;
+  }
 
-.btn.top {
-  opacity: 1;
+  .time-container h2 {
+    padding-bottom: 0.7rem;
+    font-size: 2rem;
+  }
+  .time-container p {
+    padding: 0.5rem rem;
+    font-size: 1rem;
+  }
+
+  .sectio-container {
+    background-color: white;
+    padding: 2rem;
+    width: 78%;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
 }

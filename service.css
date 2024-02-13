@@ -237,12 +237,12 @@ img {
 }
 
 .logo {
-  width: 50%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   position: fixed;
-  top: 3;
-  left: 1;
+  top: 0;
+  left: 0;
 }
 
 .logo nav {
@@ -414,7 +414,7 @@ footer {
 @media (max-width: 500px) {
   .logo {
     width: 100%;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;

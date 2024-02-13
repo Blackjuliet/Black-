@@ -5,15 +5,6 @@ body {
   /* text-align: center; */
 }
 
-*/ *,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-body {
-  margin: 0;
-}
-
 .menu-wrap {
   position: fixed;
   top: 0;
@@ -152,4 +143,14 @@ ul a {
   text-decoration: none;
   color: white;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+/* styling the main contaner */
+
+.container {
+  background-color: darkblue;
+  width: 95%;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 3rem;
 }

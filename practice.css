@@ -2,116 +2,339 @@
   --primary: #ddd;
   --dark: #333;
   --lightg: #fff;
-  --shadow: 0 1px 5px rgba(104 104 104 0.8);
+  --shadow: 0 5px 5px black;
+  --padding: 1.5rem;
+  --border-bottom: 2px solid black;
+  --border-radius: 100%;
 }
-/* html {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--dark);
-} */
-body {
+
+* {
   margin: 0;
-  font-size: 1.125rem;
+}
+
+body {
+  font-size: 1.3rem;
   background-color: pink;
 }
-/* .responsiveness {
-  background-color: rgb(240, 104, 149);
-  max-width: 80%;
-  margin-left: 7rem;
-  display: flex;
-  flex-direction: column;
-  padding: 15px;
-}
-h1 {
+
+.burger-navegation {
+  position: fixed;
+  top: 0;
+  right: 3rem;
+  z-index: 1;
   display: flex;
   justify-content: center;
-  font-size: 3rem;
+  align-items: center;
+}
+.inpu {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  opacity: 0;
+}
+.nav-bnt {
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(white, green, blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  padding: 0.2rem;
+}
+
+.nav-bnt div {
   width: 100%;
-}
-span {
-  color: purple;
-  text-align: center;
-}
-img {
+  height: 4px;
+  background: repeating-radial-gradient(green, blue 10%);
+  position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
+}
+.nav-bnt div::before,
+.nav-bnt div::after {
+  content: "";
   width: 100%;
-  max-height: 15rem;
+  height: 4px;
+  background: repeating-radial-gradient(green, blue 10%);
+  position: absolute;
+  top: -10px;
+  left: 0;
 }
-.TWO {
-  background-color: rgb(216, 69, 118);
+
+.nav-bnt div::after {
+  top: 10px;
+}
+
+/* making it rotate at a giving deg with the tranform properties */
+.inpu:checked + .nav-bnt div {
+  transform: rotate(135deg);
+}
+.inpu:checked + .nav-bnt div::before,
+.inpu:checked + .nav-bnt div::after {
+  transform: rotate(90deg);
+}
+
+/* let make it function */
+
+.inpu:checked ~ .menu-navegation {
+  visibility: visible;
+}
+.inpu:checked ~ .menu-navegation div {
+  transform: scale(1);
+}
+
+.inpu:checked ~ .menu-navegation div div {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+/* 
+let styl the menu now giving it is function and display properties */
+
+.menu-navegation {
+  width: 50%;
+  height: 100vh;
+
+  position: fixed;
+  top: 0rem;
+  right: 0rem;
+  z-index: 1;
   display: flex;
-  gap: 10px;
-  margin: 10px;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  overflow: hidden;
 }
-.TWO > div {
-  border: 5px solid lightgreen;
-}
-.THREE {
-  background-color: rgb(216, 69, 118);
+
+.menu-navegation div {
+  width: 100vw;
+  height: 100vw;
+
+  transform: scale(0);
+  transition: 0.7s ease;
   display: flex;
-} */
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+}
+
+.menu-navegation div div {
+  width: 100%;
+  height: 100vh;
+  background: repeating-radial-gradient(rgb(138, 93, 93) 15%, violet) 10%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  align-items: center;
+  border-radius: var(--border-radius);
+}
+
+.burger-navegation ul li {
+  list-style: none;
+  padding: var(--padding);
+}
+.menu-navegation ul a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: black;
+  box-shadow: var(--shadow);
+}
+
+.menu-navegation ul a:hover {
+  color: white;
+  padding: var(--padding);
+  border-radius: 1rem;
+  margin: 1rem;
+  transition: all 1s ease-in-out;
+}
+
+/* ceating the main ::content of the body after the header  */
+
 .responsiveness {
-  background-color: wheat;
-  margin: 0 auto;
-  width: 95%;
+  background-color: white;
+  width: 90%;
   max-width: 980px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-size: 1.7rem;
 }
-.TWO {
+.responsiveness .logo {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin: 2rem auto;
+  align-items: center;
 }
-img {
-  max-width: 100%;
+
+.responsiveness .logo h1 {
+  font-size: 4rem;
+  font-weight: 700;
 }
-h1 {
-  font-size: 3rem;
-  text-align: center;
+
+.responsiveness .logo ul {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style: none;
 }
-h3 {
+.responsiveness .logo a {
+  color: black;
+  text-decoration: none;
   font-size: 1.5rem;
 }
-span {
-  color: purple;
+
+/* stying the secound container */
+img {
+  width: 100%;
 }
-p {
-  margin: 0;
+.responsiveness .card-one {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
-.culum-one {
-  width: 20%;
+.card-one .one {
+  grid-column: span 2;
+  box-shadow: var(--shadow);
 }
-.culum {
-  width: 70%;
+.card-one .one:hover {
+  box-shadow: var(--shadow);
+  padding: var(--padding);
+  transition: all 1s ease-in-out;
 }
-.culum-two {
-  width: 45%;
-}
-.col {
+
+.responsiveness .card-one .two {
   background-color: black;
   color: white;
+  grid-row: span 2;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.responsiveness .card-one .two h1 {
+  color: rgb(219, 164, 24);
+}
+.responsiveness .card-one .two h3 {
+  font-size: 1.6rem;
+}
+.responsiveness .card-one .two p {
+  font-size: 1.5rem;
   padding: 1rem;
 }
-@media (max-width: 600px) {
-  body {
-    background-color: purple;
+.responsiveness .card-one .two .one {
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+.responsiveness .card-one .two .Two {
+  padding-top: 1.3rem;
+}
+
+.responsiveness .three {
+  font-weight: bold;
+  font-size: 2.8rem;
+}
+.responsiveness .pag button {
+  background-color: red;
+  padding: 0.7rem 2rem;
+  border: none;
+  margin-top: 2rem;
+  box-shadow: var(--shadow);
+}
+.responsiveness .pag button:hover {
+  background-color: lightblue;
+  padding: 0.7rem 2rem;
+  transform: rotate(10deg);
+  margin-top: 2rem;
+  box-shadow: var(--shadow);
+}
+.responsiveness .pag button a {
+  color: white;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.responsiveness .pag button a:hover {
+  color: black;
+  transition: 1s ease-in-out;
+  padding: var(--padding);
+}
+
+/* styling the third secound section of th page */
+
+.responsiveness .card-two img {
+  width: 40%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-two {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 4rem 0;
+}
+.card-two .four {
+  display: flex;
+  /* padding-right: 1rem; */
+  gap: 1.5rem;
+}
+.card-two .four p {
+  padding-top: 0.3rem;
+  font-size: 1.5rem;
+}
+.card-two .four h6 {
+  padding-top: 0.3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.card-two .four h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(202, 195, 195);
+}
+@media (max-width: 690px) {
+  .responsiveness {
+    background-color: whitesmoke;
   }
-  .TWO {
+
+  .responsiveness .logo {
+    flex-direction: column;
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+  .responsiveness .logo a {
+    font-size: 2.5rem;
+  }
+  .responsiveness .card-one {
+    /* grid-template-columns: repeat(1, 1fr); */
+    gap: 1rem;
     display: flex;
     flex-direction: column;
   }
-  .culum-one {
-    width: 100%;
+  .responsiveness .logo ul {
+    flex-direction: column;
   }
-  .culum {
-    width: 100%;
+  .card-two {
+    display: flex;
+    flex-direction: column;
+    margin: 4rem 0;
+
+    text-align: center;
   }
-  .culum-two {
-    width: 100%;
+  .card-two .four {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .responsiveness .card-two img {
+    width: 70%;
+    margin: 0 auto;
+    height: 30vh;
+    object-fit: cover;
+    object-position: center;
+    margin-top: 1.7rem;
+    box-shadow: var(--shadow);
   }
 }
-/* @media (min-width: 1000px) {
-  body {
-    background-color: green;
-  }
-} */

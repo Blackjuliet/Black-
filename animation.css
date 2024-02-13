@@ -16,6 +16,135 @@ body {
   font-family: "Open Sans";
 }
 
+.BURGER-CONTA {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100vh;
+}
+
+.BURGER-B {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+}
+
+.BURGEN {
+  width: 40px;
+  height: 40px;
+  background-color: whitesmoke;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem;
+}
+
+.BURGEN div {
+  background-color: black;
+  width: 100%;
+  height: 4px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
+}
+.BURGEN div::before,
+.BURGEN div::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  background-color: black;
+  position: absolute;
+  top: -10px;
+  left: 0;
+}
+
+.BURGEN div::after {
+  top: 10px;
+}
+
+.BURGER-B:checked + .BURGEN div {
+  transform: rotate(135deg);
+}
+.BURGER-B:checked + .BURGEN div::before,
+.BURGER-B:checked + .BURGEN div::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+.BURGER-B:checked ~ .MAIN-BURGER-CONTA {
+  visibility: visible;
+}
+
+.BURGER-B:checked ~ .MAIN-BURGER-CONTA div {
+  transform: scale(1);
+  transition: all 0.4s ease-in-out;
+}
+
+.BURGER-B:checked ~ .MAIN-BURGER-CONTA div div {
+  opacity: 1;
+  transition: opacity ease 1s;
+}
+
+/* styling the navegation header */
+
+.MAIN-BURGER-CONTA {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  visibility: hidden;
+  overflow: 0 hidden;
+}
+
+.MAIN-BURGER-CONTA div {
+  width: 200vw;
+  height: 200vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0);
+  transition: all 0.7s ease-in-out;
+}
+
+.BURGER-B div div {
+  background-color: whitesmoke;
+  max-width: 100%;
+  height: 95vh;
+  text-align: center;
+  opacity: 0;
+  transition: opacity ease 1s;
+}
+
+.MAIN-BURGER-CONTA ul li {
+  list-style: none;
+  padding-bottom: 1rem;
+}
+
+.MAIN-BURGER-CONTA a {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+}
+
 .main {
   background-color: white;
   width: 98%;

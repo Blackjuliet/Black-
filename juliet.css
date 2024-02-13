@@ -1,0 +1,20 @@
+.menu {
+}
+body {
+  background-color: greenyellow;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+article {
+  background-color: blue;
+}

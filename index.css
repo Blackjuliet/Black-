@@ -1,13 +1,14 @@
-/* :root {
-  --shadow: 6px 6px rgb(240, 237, 237);
+:root {
+  --shadow: 6px 6px rgba(0, 0, 0, 0.4);
   --light: #f8f8f8;
   --ligt-gray: #707070;
   --ligt-blu: #1792d2;
   --dark-blu: #143774;
   --border: 1px solid black;
-} */
+}
 
 .menu-container {
+  background-color: whitesmoke;
   position: fixed;
   top: 0;
   left: 0;
@@ -145,3 +146,148 @@
   opacity: 1;
   transition: opacity 0.4s ease;
 }
+
+.container {
+  background-color: rgb(3, 3, 56);
+  width: 96%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  color: white;
+  height: 80vh;
+  flex-wrap: wrap;
+}
+
+.card-ONE {
+  background-color: rgb(24, 24, 90);
+  width: 30%;
+  padding-left: 2rem;
+  padding-bottom: 1rem;
+  border-top-right-radius: 40%;
+}
+
+.card-ONE .div-one h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.card-ONE .div-one i {
+  padding-right: 2rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.card-ONE .div-on i {
+  background-color: rgb(15, 14, 14);
+  padding: 0.7rem;
+  color: lightblue;
+  border-radius: 5px;
+}
+/* styling the other part */
+
+.card-TWO {
+  background-color: rgb(20, 20, 109);
+  width: 55%;
+  padding-left: 1rem;
+  /* height: 6rem; */
+  position: relative;
+}
+.card-TWO input {
+  padding-left: 11rem;
+}
+
+.div-number {
+  background-color: white;
+  color: black;
+  width: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0.2rem;
+  border-radius: 7px;
+  position: absolute;
+  top: -1.7rem;
+  right: 1rem;
+  height: 2.6rem;
+}
+.div-number h1 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.div-number .NUN {
+  margin-top: 4rem;
+  /* vertical-align: sub; */
+  vertical-align: 2px;
+}
+.card-TWO .small-numb {
+  font-size: 0.6rem;
+  font-weight: bold;
+}
+
+.card-TWO p {
+  font-size: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .card-ONE {
+    background-color: rgb(24, 24, 90);
+    width: 70%;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    border-top-right-radius: 40%;
+    box-shadow: var(--shadow);
+  }
+
+  .card-TWO {
+    width: 70%;
+    position: relative;
+  }
+  .card-TWO input {
+    padding-left: 4rem;
+  }
+
+  .div-number {
+    position: absolute;
+    bottom: 2rem;
+    right: 3rem;
+    margin-top: 5rem;
+    box-shadow: var(--shadow);
+  }
+}
+
+/* designing the raange in input to ahcive the color i want */
+
+/* input[type="range"] {
+  -webkit-appearance: none;
+  outline: none;
+  height: 10px;
+  background-color: red;
+  border-radius: 5px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  outline: none;
+  background-color: white;
+  border-radius: 5px;
+  border-radius: 50%;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  border-radius: 50%;
+  cursor: pointer;
+} */

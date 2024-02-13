@@ -1,236 +1,380 @@
 :root {
-  --shadow: 3px 5px 5px green;
-  --lightg: #fff;
-  --dark: #333;
+  --shadow: 10px 0px white;
+  --border-radius: 100%;
+  --border-bottom: 2px solid black;
 }
-html {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--dark);
-}
+
 body {
-  background-color: #ccc;
-  line-height: 1.4;
+  background-color: white;
+  display: flex;
+  height: 100vh;
+}
+
+* {
   margin: 0;
   padding: 0;
 }
-.universtiy-web {
-  padding: 10px;
+
+.HAM-BURGE {
+  background-color: red;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
-.UNI {
-  background: url(beach.jpg);
-  background-size: cover;
-  background-position: center;
-  padding: 0.3rem;
+.HAM {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
 }
-header nav {
+.BURGER {
+  width: 50px;
+  height: 50px;
+  background-color: lightgray;
+  padding: 0.2px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
 }
-.log {
+
+.BURGER div {
+  width: 100%;
+  height: 4px;
+  background-color: black;
+  position: relative;
+  top: 0;
+  left: 0;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
 }
-.log i {
-  color: red;
+
+.BURGER div::before,
+.BURGER div::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  background-color: black;
+  position: absolute;
+  top: -10px;
+  left: 0;
 }
-.log h1 {
-  color: var(--lightg);
-  text-transform: uppercase;
+.BURGER div::after {
+  top: 10px;
 }
-ul {
+
+/* lets checked the box now and make it rotate */
+
+.HAM:checked + .BURGER div {
+  transform: rotate(135deg);
+}
+
+.HAM:checked + .BURGER div::before,
+.HAM:checked + .BURGER div::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+.HAM-MENU {
+  width: 30%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
+.HAM-MENU div {
+  width: 98%;
+  height: 98vh;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  transform: scale(0);
+  transition: all 0.5s ease-in-out;
+}
+
+.HAM-MENU div div {
+  max-width: 100%;
+  height: 98vh;
+  background-color: white;
+  text-align: center;
+  opacity: 0;
+  transition: opacity all 0.4s ease;
+}
+
+.HAM-MENU ul li {
+  padding: 1.7rem;
+  font-size: 2rem;
   list-style: none;
+}
+
+.HAM-MENU ul a {
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: var(--shadow);
+}
+.HAM-MENU ul a:hover {
+  color: blue;
+  padding: 1rem;
+  border-radius: 50%;
+  transition: all 1s ease-in-out;
+}
+
+.HAM:checked ~ .HAM-MENU {
+  visibility: visible;
+}
+
+.HAM:checked ~ .HAM-MENU div {
+  transform: scale(1);
+  transition: all 0.4s ease;
+}
+.HAM:checked ~ .HAM-MENU div div {
+  opacity: 1;
+  transition: opacity all 0.4s ease;
+}
+
+.MASTER-CARD-CONTAINER-FIRST {
+  background-color: red;
+  width: 950%;
+  max-width: 950px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  min-width: 50%;
-}
-ul a {
-  color: var(--lightg);
-  text-decoration: none;
-  font-weight: bold;
-  /* padding: 13px; */
-}
-ul a:hover {
-  background-color: red;
-  border-bottom: 1px solid black;
-  color: var(--dark);
-}
-.UNIVE {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 3.5rem;
-}
-.UNIVE h1 {
-  color: var(--lightg);
-  padding-top: 1rem;
-  font-size: 2rem;
-  padding: 0px;
-  margin: 0px;
-}
-.UNIVE p {
-  color: var(--lightg);
-  padding-bottom: 2rem;
-  padding: 0px;
-  margin: 0px;
 }
 
-.UNIVE > a {
-  color: var(--lightg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  margin-top: 1rem;
-  padding: 0.3rem 0.5rem;
-  border: 1px solid white;
-  font-size: 0.9rem;
+.master-card {
+  background: linear-gradient(
+    125deg,
+    rgb(65, 9, 65),
+    rgb(7, 7, 54),
+    rgb(48, 10, 48)
+  );
+  height: 100vh;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 50%;
 }
-.UNIVE > a:hover {
-  background-color: red;
-  color: var(--dark);
-}
-.UNI-ABOUT {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.UNIV {
-  background-color: wheat;
-  padding: 5px 10px;
-  text-align: center;
-  border-radius: 10px;
-}
-.UNIV:hover {
-  box-shadow: var(--shadow);
-  background-color: red;
-  color: var(--lightg);
-}
-.UNIV p {
-  font-size: 10px;
-}
-.one {
-  display: flex;
+
+.card {
+  background: linear-gradient(
+    125deg,
+    rgb(145, 12, 145),
+    lightblue,
+    rgb(41, 3, 41)
+  );
+  height: 20vh;
+  border-radius: 6px;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding-top: 1.8rem;
-  padding-bottom: 1.8rem;
-}
-.one h2 {
-  margin: 0;
-}
-.one p {
-  margin: 0;
-}
-.UNI-CAMP {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
-}
-.UNI-CAMP > img {
+  align-items: center; */
+  position: absolute;
+  z-index: 2;
   width: 100%;
-  height: 30vh;
-}
-.UNI-CAMP > img:hover {
-  background-color: red;
-  box-shadow: var(--shadow);
-}
-.UNI-FACLIIT {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.facilit img {
-  border-radius: 10px;
-}
-.facilit img:hover {
-  box-shadow: var(--shadow);
-}
-.UNIT-STUDE {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-.student-t {
-  background-color: wheat;
-  display: flex;
-  gap: 10px;
-}
-.student-t p {
-  font-size: 0.8rem;
-  color: gray;
+  top: 10rem;
+  right: -8rem;
+  padding: 1rem;
 }
 
-.student-t img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50px;
-  padding-top: 10px;
-  padding-left: 10px;
-}
-.two i {
-  color: red;
-}
-.student-t:hover {
-  box-shadow: var(--shadow);
-  color: white;
-}
-.UNI-ENROLL {
-  background: url(choco-cake.jpg);
-  background-size: cover;
-  background-position: center;
+.BACK-CARD {
+  background-color: lightgray;
+  height: 25vh;
+  border-radius: 6px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 17rem;
+  right: -10rem;
   text-align: center;
-  padding: 3.5rem;
 }
-.UNI-ENROLL a {
-  color: white;
-  text-decoration: none;
-  border: 1px solid white;
-  padding: 2px 10px;
+/* stylin items inside the card */
+
+.card .thin {
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid black;
 }
-.UNI-ENROLL a:hover {
-  color: var(--dark);
-  background-color: wheat;
-  box-shadow: var(--shadow);
-  border-radius: 10px;
+
+.card .thie {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-left: 4rem;
+  margin-top: 0.8rem;
 }
-footer {
+.card .P {
+  font-size: 1.5rem;
+
+  padding-top: 2rem;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  text-align: center;
-  margin-top: 2rem;
+  align-items: center;
 }
-footer i {
-  color: red;
-  display: grid;
-  padding: 0.4rem 1rem;
+
+.card .PI {
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1.3rem;
 }
-footer a {
+
+.BACK-CARD .bla {
+  background-color: black;
+  height: 3rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.BACK-CARD .razor {
+  background-color: darkgray;
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1rem;
+  align-items: center;
+  height: 2rem;
+  margin-bottom: 4rem;
+}
+
+.CARD-SEN {
+  width: 40%;
+}
+.card-sen {
+  padding-bottom: 1.3rem;
+}
+input {
+  padding: 0.7rem;
+  width: 60%;
+  font-size: 1.2rem;
+}
+label {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+button {
+  width: 70%;
+  padding: 0.8rem 0;
+  background-color: black;
+}
+button a {
+  color: white;
+  font-size: 1.2rem;
   text-decoration: none;
-  color: var(--dark);
 }
-footer p {
-  font-size: 0.8rem;
-}
-footer a:hover {
-  background-color: red;
-  box-shadow: var(--shadow);
-  color: var(--lightg);
-}
+
 @media (max-width: 600px) {
-  .UNI {
+  .MASTER-CARD-CONTAINER-FIRST {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
   }
-  header nav {
+  /* card one editing on midea */
+  .card {
+    height: 20vh;
+    top: 0.9rem;
+    right: 0rem;
+    width: 92%;
+    margin: 0 auto;
+    margin-left: 5rem;
+  }
+
+  .card .thin {
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 2.5rem;
+  }
+
+  .card .thie {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-left: 2rem;
+    margin-top: 0.4rem;
+  }
+
+  .card .P {
+    font-size: 1.3rem;
+    padding-top: 1.7rem;
+  }
+
+  .card .PI {
+    font-size: 1rem;
+    padding-top: 0.7rem;
+  }
+
+  .master-card {
+    height: 100vh;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+  }
+
+  .BACK-CARD {
+    height: 25vh;
+    width: 99%;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+    bottom: 3rem;
+    right: 0.2rem;
+  }
+
+  /* styling the section */
+
+  .CARD-SEN {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-sen {
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+  }
+  input {
+    padding: 0.2rem;
+    width: 80%;
+    font-size: 1rem;
+  }
+  label {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
   }
 }

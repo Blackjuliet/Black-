@@ -5,6 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="grid.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400, 400i 700, 700i&display=swap,"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="" />
     <title>Document</title>
     <link
       rel="stylesheet"
@@ -13,64 +18,73 @@
   </head>
   <body>
     <!-- <div class="sidebar"> -->
-    <div class="side">
-      <div class="btn">
-        <div class="top">
-          <i class="fa fa-codepen"
-            ><span><code>commerce</code></span></i
-          >
-          >
-        </div>
-        <span><i class="fa fa-bars"></i></span>
-      </div>
-      <div class="menu">
-        <img src="download.jpg" alt="#" />
-        <div class="hou">
-          <h4>black.</h4>
-          <p>admin</p>
-        </div>
-      </div>
-      <ul>
-        <li>
-          <a href=""><i class="fa fa-qrcode"></i>dashborad</a>
-        </li>
-        <li>
-          <a href=""><i class="fa fa-shopping-bag"></i>products</a>
-        </li>
-        <li>
-          <a href=""><i class="fa fa-check-square-o"></i>categories</a>
-        </li>
-        <li>
-          <a href=""><i class="fa fa-address-card-o"></i>order</a>
-        </li>
-        <li>
-          <a href=""><i class="fa fa-child"></i>customers</a>
-        </li>
-        <li>
-          <a href=""><i class="fa fa-map-marker"></i>shipping</a>
-        </li>
-        <li>
-          <a href=""><i class="fa fa-cogs"></i>setting</a>
-        </li>
-        <li>
-          <a href=""><i class="fa fa-sign-out"></i>logout</a>
-        </li>
-      </ul>
 
-      <div class="main-content">
-        <div class="container">
-          <h1>code practice</h1>
+    <div class="burger-burn-container">
+      <input type="checkbox" class="burn" />
+      <div class="burn-"><div></div></div>
+
+      <div class="burn-menu">
+        <div>
+          <div>
+            <ul>
+              <li><a href="about.html">about</a></li>
+              <li><a href="index.html">index</a></li>
+              <li><a href="service.html">service</a></li>
+              <li><a href="practice.html">practice</a></li>
+              <li><a href="sematic.html">sematic</a></li>
+              <li><a href="grid.html">grid</a></li>
+              <li><a href="contact.html">contact</a></li>
+              <li><a href="animation.html">animation</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
+
+    <main class="tsummary-container">
+      <section class="time-container">
+        <h3>your result</h3>
+        <div class="number">
+          <h1>76</h1>
+          <p>of 100</p>
+        </div>
+        <h2>great</h2>
+        <p>
+          you scord higher then 65% of <br />
+          the people who have taking <br />
+          there text
+        </p>
+      </section>
+
+      <section class="sectio-container">
+        <h1>summary</h1>
+
+        <div class="card-one">
+          <div class="one">
+            <i class="fa fa-bolt">reaction</i>
+          </div>
+          <span> <strong>80</strong> / 100 </span>
+        </div>
+        <div class="card-two">
+          <div class="one">
+            <i class="fa fa-question-circle-o">memory</i>
+          </div>
+          <span> <strong>80</strong> / 100 </span>
+        </div>
+        <div class="card-three">
+          <div class="one">
+            <i class="fa fa-commenting-o">verbal</i>
+          </div>
+          <span> <strong>80</strong> / 100 </span>
+        </div>
+        <div class="card-four">
+          <div class="one">
+            <i class="fa eye fa-eye">visual</i>
+          </div>
+          <span> <strong>80</strong> / 100 </span>
+        </div>
+        <button><a href="#">continue</a></button>
+      </section>
+    </main>
   </body>
-
-  <script>
-    let btn = document.querySelector(".btn");
-    let side = document.querySelector(".side");
-
-    btn.onclick = function () {
-      side.classList.toggle("active");
-    };
-  </script>
 </html>
