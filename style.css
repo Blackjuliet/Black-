@@ -1,8 +1,457 @@
 body {
-  background-color: red;
+  background-color: violet;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+}
+
+/* stying the container */
+.menu-container {
+  background-color: whitesmoke;
+  width: 95%;
+  max-width: 950px;
+  margin: auto;
+}
+.menu-container button {
+  background-color: black;
+  color: white;
+  margin-bottom: 2rem;
+  width: 40%;
+  padding: 0.7rem 0;
+  border: 1px solid white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* styling the  section one of the container */
+
+.book-table-one {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  position: relative;
+  gap: 2rem;
+}
+
+.book-table-one .number {
+  padding-left: 4rem;
+}
+.book-table-one .number h3 {
+  padding-bottom: 2.5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.book-table-one .number h1 {
+  font-style: italic;
+  padding: 1rem 0;
+  font-size: 3.7rem;
+}
+.book-table-one .number p {
+  font-style: italic;
+  font-size: 0.9rem;
+  padding-bottom: 1.9rem;
+}
+
+.book-table-one .IMGE {
+  background-image: url(food\ img.jpeg);
+  width: 50%;
+  height: 40vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  right: 0rem;
+  bottom: 0;
+  border-top-left-radius: 2rem;
+}
+
+/* styling the  section one of the container */
+
+.book-table-two {
+  display: flex;
+  height: 40vh;
+  background-color: white;
+  align-items: center;
+  position: relative;
+}
+.book-table-two .div {
+  width: 60%;
+  background-color: rgb(237, 232, 232);
+  height: 20vh;
+  margin-top: 4rem;
+  border-top-right-radius: 4rem;
+}
+.book-table-two .image {
+  width: 30%;
+  height: 100vh;
+  position: absolute;
+  top: -3rem;
+  left: 4rem;
+}
+.book-table-two img {
+  box-shadow: 5px 5px 5px gray;
+  width: 100%;
+  height: 50vh;
+}
+
+.book-table-two .place {
+  position: absolute;
+  right: 10rem;
+}
+.book-table-two .place h2 {
+  text-transform: capitalize;
+  font-style: italic;
+  padding-bottom: 1rem;
+  font-weight: bold;
+  font-size: 2rem;
+}
+/* styling the  section one of the container */
+
+.book-table-three {
+  padding-top: 7rem;
+  display: flex;
+  background-color: white;
+  align-items: center;
+  position: relative;
+}
+
+.book-table-three .div {
+  width: 90%;
+  margin-left: 15rem;
+  background-color: rgb(237, 232, 232);
+  height: 20vh;
+  margin-top: 4rem;
+  border-top-left-radius: 4rem;
+}
+.book-table-three .image {
+  width: 30%;
+  height: 100vh;
+  position: absolute;
+  right: 3rem;
+  top: 2rem;
+}
+
+.book-table-three img {
+  width: 100%;
+  height: 40vh;
+}
+.book-table-three .place {
+  position: absolute;
+  left: 3.7rem;
+}
+
+.book-table-three .place h2 {
+  text-transform: capitalize;
+  padding-bottom: 1rem;
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+/* styling the  section one of the container */
+
+.book-table-four {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  align-items: center;
+  color: white;
+  padding: 3rem 0;
+  gap: 2rem;
+}
+.book-table-four .our {
+  padding-left: 1rem;
+}
+.book-table-four .our h2 {
+  padding-bottom: 2rem;
+  font-size: 2rem;
+  font-style: italic;
+}
+.book-table-four .our p {
+  font-size: 1rem;
+}
+.book-table-four .aside img {
+  width: 200px;
+  height: 200px;
+}
+
+.book-table-four .aside {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 2rem;
+  padding-top: 2rem;
+}
+.book-table-four .aside h5 {
+  font-size: 1.9rem;
+  font-style: italic;
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+}
+.book-table-four .aside p {
+  font-size: 1.2rem;
+  padding-bottom: 0.7rem;
+}
+/* styling the  section one of the container */
+
+.book-table-five {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 3rem 0;
+}
+.book-table-five .display img {
+  height: 50vh;
+}
+.book-table-five .DISPLAY h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+.book-table-five .DISPLAY p {
+  font-size: 1.3rem;
+  padding-bottom: 3rem;
+}
+.book-table-five .DISPLAY button {
+  border: none;
+  padding: 1rem 0;
+  width: 50%;
+}
+.book-table-five .DISPLAY .diff {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+.book-table-five .DISPLAY .dif {
+  letter-spacing: 1px;
+}
+
+.book-table-five .display {
+  width: 50%;
+}
+/* styling the  section one of the container */
+
+.book-table-six {
+  background-image: url(food\ img.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.book-table-six .group {
+  background-color: black;
+  opacity: 0.8;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+.book-table-six .group h1 {
+  font-size: 2rem;
+}
+.book-table-six .group button {
   width: 100%;
-  flex-direction: column;
+  padding: 1rem 2rem;
+}
+/* styling the  section one of the container */
+.book-table-six footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+  align-items: center;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 500px) {
+  .book-table-one {
+    flex-direction: column;
+  }
+
+  .book-table-one .number {
+    padding-left: 4rem;
+  }
+  .book-table-one .number h3 {
+    margin-top: 10rem;
+    text-align: center;
+    padding-right: 2rem;
+  }
+  .book-table-one .number h1 {
+    padding-right: 2rem;
+    font-size: 3rem;
+    text-align: center;
+  }
+  .book-table-one .number p {
+    font-size: 0.9rem;
+    padding-bottom: 1.9rem;
+    text-align: center;
+    padding-right: 2rem;
+  }
+
+  .book-table-one .IMGE {
+    position: absolute;
+    left: 2rem;
+    top: -8rem;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+  }
+
+  /* button section */
+  .menu-container button {
+    width: 80%;
+  }
+  /* section-two of the container */
+
+  .book-table-two {
+    flex-direction: column;
+    height: 100vh;
+  }
+  .book-table-two .image {
+    width: 80%;
+    left: 2rem;
+  }
+
+  .book-table-two .place {
+    position: absolute;
+    width: 50%;
+    height: 100vh;
+    text-align: center;
+    margin-top: 28rem;
+  }
+  .book-table-two .place h2 {
+    padding-bottom: 1rem;
+    font-size: 1.7rem;
+  }
+  .book-table-two .place p {
+    font-size: 1.7rem;
+    padding-left: 2rem;
+  }
+  /* section three of the container */
+
+  .book-table-three {
+    flex-direction: column;
+    height: 100vh;
+    padding: right 2rem;
+  }
+
+  .book-table-three .div {
+    width: 0;
+  }
+  .book-table-three .image {
+    width: 100%;
+    height: 40vh;
+    position: absolute;
+    right: 0rem;
+    top: 0rem;
+  }
+
+  .book-table-three img {
+    width: 100%;
+    height: 40vh;
+  }
+  .book-table-three .place {
+    position: absolute;
+    left: 3.7rem;
+    padding: 0rem;
+  }
+
+  .book-table-three .place h2 {
+    font-size: 1.7rem;
+    margin-top: 10rem;
+    text-align: center;
+  }
+  .book-table-three .place p {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  /* section four for a container */
+  .book-table-four {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .book-table-four .our p {
+    font-size: 1rem;
+  }
+  .book-table-four .aside img {
+    width: 280px;
+    height: 280px;
+  }
+
+  .book-table-four .aside {
+    flex-direction: column;
+  }
+
+  /* section five of container */
+  .book-table-five {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 0;
+  }
+  .book-table-five .display img {
+    height: 70vh;
+    width: 200px;
+    text-align: center;
+    object-fit: contain;
+  }
+  .book-table-five .DISPLAY h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+  }
+  .book-table-five .DISPLAY p {
+    font-size: 1.3rem;
+    padding-bottom: 3rem;
+  }
+  .book-table-five .DISPLAY button {
+    border: none;
+    padding: 1rem 0;
+    width: 50%;
+  }
+  .book-table-five .DISPLAY .diff {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+  .book-table-five .DISPLAY .dif {
+    letter-spacing: 1px;
+  }
+
+  .book-table-five .display {
+    width: 50%;
+  }
+  /* section six of the container: ; */
+  .book-table-six .group {
+    flex-direction: column;
+    text-align: center;
+  }
+  .book-table-six .group button {
+    margin-top: 1rem;
+  }
+  /* stylingbthe footer of the container: ; */
+  .book-table-six footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    padding: 2rem;
+    align-items: center;
+    letter-spacing: 2px;
+  }
+  .book-table-six footer h1 {
+    margin-bottom: 1rem;
+  }
+  .book-table-six footer .PAGE {
+    margin-top: 1.5rem;
+  }
 }

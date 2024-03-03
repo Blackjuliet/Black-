@@ -243,6 +243,7 @@ img {
   position: fixed;
   top: 0;
   left: 0;
+  padding: 15px 0;
 }
 
 .logo nav {
@@ -266,11 +267,15 @@ img {
 }
 
 .logo a {
-  color: white;
-  font-size: 0.9rem;
+  color: green;
+  font-size: 16px;
   text-decoration: none;
+  font-size: 2rem;
 }
 
+nav > ul > li > a {
+  font-size: 15rem;
+}
 ul .one {
   background-color: rgb(245, 10, 49);
   border-radius: 2rem;
